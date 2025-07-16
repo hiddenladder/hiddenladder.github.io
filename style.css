@@ -1,62 +1,92 @@
-    body {
+ body {
       background-color: black;
-      color: #00ffcc;
+      color: #f00;
       font-family: 'Courier New', Courier, monospace;
       text-align: center;
       margin-top: 50px;
-      animation: flickerBackground 3s infinite alternate;
-    } 
+      animation: flickerbackground 3s infinite alternate;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
 
     h1 {
       font-size: 3em;
-      text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+      color: red
+      margin-bottom: 0.2em;
+      text-shadow: 0 0 5px #;
+    }
+
+    .message {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+      color: #0096ff;
+      animation: flicker 2s infinite;
+    }
+
+    .puzzle {
+      font-size: 1.2em;
+      margin-top: 1em;
+      color: #FFF;
+      animation: pulse 0s infinite;
     }
 
     .countdown {
-      font-size: 2em;
-      margin-top: 30px;
-      text-shadow: 0 0 5px red, 0 0 10px red;
-      animation: flickerText 2s infinite alternate;
+      margin-top: 1em;
+      font-size: 1.2em;
+      color: #39FF14;
     }
 
-    .rung-text {
-      margin-top: 50px;
-      font-size: 1.5em;
-      color: #ff0044;
-      text-shadow: 0 0 5px #ff0044, 0 0 15px #ff0044;
-      animation: flickerText 1.5s infinite alternate;
+
+    .email-form {
+      margin-top: 2em;
     }
 
-    .gif-banner {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin: 30px 0;
+    .email-form input,
+    .email-form button {
+      padding: 0.6em;
+      font-size: 1em;
+      margin: 0.5em;
+      background-color: #000;
+      color: #39FF14;
+      border: 1px solid #ff0;
     }
 
-    .gif-banner img {
-      width: 100px;
-      height: auto;
-      image-rendering: pixelated;
-      filter: brightness(0.9) contrast(1.2);
+    .email-form input::placeholder {
+      color: #998;
     }
-    
-    .solve-text {
-      margin-top: 40px;
-      font-size: 2em;
-      color: #ffff00;
-      text-shadow: 0 0 5px #ffff00, 0 0 15px #ff6600;
-      animation: flickerText 1s infinite alternate;
+
+    .email-form button:hover {
+      background-color: #0f0;
+      color: #000;
+      cursor: pointer;
+    }
+
+    .form-message {
+      margin-top: 1em;
+      font-size: 1em;
       font-weight: bold;
+      color: #0f0;
+      text-shadow: 0 0 2px #0f0;
     }
 
-    @keyframes flickerText {
-      0% { opacity: 1; }
-      50% { opacity: 0.4; }
-      100% { opacity: 1; }
+    .form-message.error {
+      color: #f00;
+      text-shadow: 0 0 2px #f00;
     }
 
-    @keyframes flickerBackground {
-      0% { background-color: #000000; }
-      100% { background-color: #050505; }
+    .form-message.success {
+      color: #0f0;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
